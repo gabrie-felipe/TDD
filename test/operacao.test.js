@@ -58,6 +58,14 @@ describe("Teste de calculadora", () => {
     resultado = () => calculadora.sub(-2, "a");
     expect(resultado).toThrow("Não é um número");
 
+    resultado = calculadora.mul(0, 0);
+    expect(resultado).toEqual(0);
+
+    resultado = calculadora.mul(4, 5);
+    expect(resultado).toEqual(20);
+
+    resultado = calculadora.mul(-2, -6);
+    expect(resultado).toEqual(12);
   });
 
 
@@ -78,6 +86,14 @@ describe("Teste de calculadora", () => {
     resultado = () => calculadora.div(-2, "a");
     expect(resultado).toThrow("Não é um número");
 
+    resultado = calculadora.div(10, -5);
+    expect(resultado).toEqual(-2);
+
+    resultado = calculadora.div(2, 2);
+    expect(resultado).toEqual(1);
+
+    resultado = calculadora.div(-2, -2);
+    expect(resultado).toEqual(1);
   });
 
 
@@ -96,4 +112,25 @@ describe("Teste de calculadora", () => {
     expect(resultado).toThrow("Não é um número");
 
   });
+
+
+
+
+  it("Operação de potencia", () => {
+    let resultado = calculadora.raiz(2,2);
+    expect(resultado).toEqual(4);
+
+    resultado = calculadora.raiz(0,2);
+    expect(resultado).toEqual(0);
+
+    resultado = calculadora.raiz(-4,2);
+    expect(resultado).toEqual(16);
+
+    resultado = () => calculadora.div("a", 2);
+    expect(resultado).toThrow("Não é um número");
+
+    resultado = () => calculadora.div(2, "a");
+    expect(resultado).toThrow("Não é um número");
+  });
+
 });
