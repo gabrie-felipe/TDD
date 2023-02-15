@@ -6,6 +6,9 @@ describe("Teste de calculadora", () => {
     let resultado = calculadora.sum(1, 2);
     expect(resultado).toEqual(3);
 
+    resultado = calculadora.sum(2, 0);
+    expect(resultado).toEqual(2);
+
     resultado = calculadora.sum(-1, 2);
     expect(resultado).toEqual(1);
 
@@ -13,20 +16,84 @@ describe("Teste de calculadora", () => {
     expect(resultado).toThrow("Não é um número");
 
     resultado = () => calculadora.sum(2, "b");
+
     expect(resultado).toThrow("Não é um número");
   });
+
+
+
 
   it("Operação de subtração", () => {
     let resultado = calculadora.sub(1, 2);
     expect(resultado).toEqual(-1);
 
-    resultado = calculadora.sub(4, 2);
-    expect(resultado).toEqual(2);
+    resultado = calculadora.sub(0, 2);
+    expect(resultado).toEqual(-2);
+
+    resultado = calculadora.sub(-4, 2);
+    expect(resultado).toEqual(-6);
 
     resultado = () => calculadora.sub("a", -2);
     expect(resultado).toThrow("Não é um número");
 
     resultado = () => calculadora.sub(-2, "a");
     expect(resultado).toThrow("Não é um número");
+  });
+
+
+
+  it("Operação de multiplicação", () => {
+    let resultado = calculadora.mul(1, 2);
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.mul(0, 2);
+    expect(resultado).toEqual(0);
+
+    resultado = calculadora.mul(-4, 2);
+    expect(resultado).toEqual(-8);
+    
+    resultado = () => calculadora.sub("a", -2);
+    expect(resultado).toThrow("Não é um número");
+
+    resultado = () => calculadora.sub(-2, "a");
+    expect(resultado).toThrow("Não é um número");
+
+  });
+
+
+
+  it("Operação de divisão", () => {
+    let resultado = calculadora.div(2, 1);
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.div(0, 2);
+    expect(resultado).toEqual(0);
+
+    resultado = calculadora.div(-4, 2);
+    expect(resultado).toEqual(-2);
+    
+    resultado = () => calculadora.div("a", -2);
+    expect(resultado).toThrow("Não é um número");
+
+    resultado = () => calculadora.div(-2, "a");
+    expect(resultado).toThrow("Não é um número");
+
+  });
+
+
+
+  it("Operação de raiz", () => {
+    let resultado = calculadora.raiz(4,(1/2));
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.raiz(0,(1/2));
+    expect(resultado).toEqual(0);
+
+    resultado = () => calculadora.div("a", (1/2));
+    expect(resultado).toThrow("Não é um número");
+
+    resultado = () => calculadora.div((1/2), "a");
+    expect(resultado).toThrow("Não é um número");
+
   });
 });
