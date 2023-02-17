@@ -16,7 +16,6 @@ describe("Teste de calculadora", () => {
     expect(resultado).toThrow("Não é um número");
 
     resultado = () => calculadora.sum(2, "b");
-
     expect(resultado).toThrow("Não é um número");
   });
 
@@ -94,6 +93,9 @@ describe("Teste de calculadora", () => {
 
     resultado = calculadora.div(-2, -2);
     expect(resultado).toEqual(1);
+
+     resultado = calculadora.div(2, 4);
+        expect(resultado).toEqual(0.5);
   });
 
 
@@ -110,6 +112,21 @@ describe("Teste de calculadora", () => {
 
     resultado = () => calculadora.div((1/2), "a");
     expect(resultado).toThrow("Não é um número");
+
+    resultado = calculadora.raiz(1, (1 / 2));
+    expect(resultado).toEqual(1);
+
+    resultado = calculadora.raiz(1, (1 / 3));
+    expect(resultado).toEqual(1);
+
+    resultado = calculadora.raiz(8, (1 / 3));
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.raiz(16, (1 / 4));
+    expect(resultado).toEqual(2);
+
+    resultado = calculadora.raiz(0, (1 / 4));
+    expect(resultado).toEqual(0);
 
   });
 
@@ -131,6 +148,18 @@ describe("Teste de calculadora", () => {
 
     resultado = () => calculadora.div(2, "a");
     expect(resultado).toThrow("Não é um número");
+
+     resultado = calculadora.raiz(2, 0);
+     expect(resultado).toEqual(1);
+
+     resultado = calculadora.raiz(1, 3);
+     expect(resultado).toEqual(1);
+
+     resultado = calculadora.raiz(6, 3);
+     expect(resultado).toEqual(216);
+
+     resultado = calculadora.raiz(2, 5);
+     expect(resultado).toEqual(32);
   });
 
 });
