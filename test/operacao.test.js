@@ -51,10 +51,10 @@ describe("Teste de calculadora", () => {
     resultado = calculadora.mul(-4, 2);
     expect(resultado).toEqual(-8);
     
-    resultado = () => calculadora.sub("a", -2);
+    resultado = () => calculadora.mul("a", -2);
     expect(resultado).toThrow("Não é um número");
 
-    resultado = () => calculadora.sub(-2, "a");
+    resultado = () => calculadora.mul(-2, "a");
     expect(resultado).toThrow("Não é um número");
 
     resultado = calculadora.mul(0, 0);
@@ -107,10 +107,10 @@ describe("Teste de calculadora", () => {
     resultado = calculadora.raiz(0,(1/2));
     expect(resultado).toEqual(0);
 
-    resultado = () => calculadora.div("a", (1/2));
+    resultado = () => calculadora.raiz("a", (1/2));
     expect(resultado).toThrow("Não é um número");
 
-    resultado = () => calculadora.div((1/2), "a");
+    resultado = () => calculadora.raiz((1/2), "a");
     expect(resultado).toThrow("Não é um número");
 
     resultado = calculadora.raiz(1, (1 / 2));
@@ -134,31 +134,31 @@ describe("Teste de calculadora", () => {
 
 
   it("Operação de potencia", () => {
-    let resultado = calculadora.raiz(2,2);
+    let resultado = calculadora.pot(2,2);
     expect(resultado).toEqual(4);
 
-    resultado = calculadora.raiz(0,2);
+    resultado = calculadora.pot(0,2);
     expect(resultado).toEqual(0);
 
-    resultado = calculadora.raiz(-4,2);
+    resultado = calculadora.pot(-4,2);
     expect(resultado).toEqual(16);
 
-    resultado = () => calculadora.div("a", 2);
+    resultado = () => calculadora.pot("a", 2);
     expect(resultado).toThrow("Não é um número");
 
-    resultado = () => calculadora.div(2, "a");
+    resultado = () => calculadora.pot(2, "a");
     expect(resultado).toThrow("Não é um número");
 
-     resultado = calculadora.raiz(2, 0);
+     resultado = calculadora.pot(2, 0);
      expect(resultado).toEqual(1);
 
-     resultado = calculadora.raiz(1, 3);
+     resultado = calculadora.pot(1, 3);
      expect(resultado).toEqual(1);
 
-     resultado = calculadora.raiz(6, 3);
+     resultado = calculadora.pot(6, 3);
      expect(resultado).toEqual(216);
 
-     resultado = calculadora.raiz(2, 5);
+     resultado = calculadora.pot(2, 5);
      expect(resultado).toEqual(32);
   });
 
